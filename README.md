@@ -2,7 +2,7 @@
 
 A self-directed, synthetic-data portfolio project for demonstrating ThoughtSpot Liveboard development, KPI design, SQL validation, and embedded analytics.
 
-The public site lives in `site/`. It is deliberately dependency-free so it can be published directly with GitHub Pages. The dashboard source data is generated from a deterministic Python script in `data/`.
+The public site lives in `docs/`. It is deliberately dependency-free so it can be published directly with GitHub Pages. The dashboard source data is generated from a deterministic Python script in `data/`.
 
 ## What this demonstrates
 
@@ -22,9 +22,8 @@ This creates `data/retail_supply_chain_daily_metrics.csv`. It contains 180 days 
 
 ## Build and publish
 
-Follow [the build runbook](docs/thoughtspot-build-runbook.md). It covers the few actions that must be completed in the ThoughtSpot and GitHub interfaces, plus the handoff details needed to activate the live embed.
+Follow [the build runbook](documentation/thoughtspot-build-runbook.md). It covers the few actions that must be completed in the ThoughtSpot and GitHub interfaces, plus the handoff details needed to activate the live embed.
 
 ## Public disclosure
 
 The site and all project materials must retain the synthetic-data / self-directed-project disclosure. Do not describe this as work completed for an employer or client.
-

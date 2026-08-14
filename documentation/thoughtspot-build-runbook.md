@@ -90,7 +90,7 @@ Audience: regional manager / merchandising partner.
 
 ## Activate the portfolio embed
 
-Edit `site/embed.js` after the liveboard exists:
+Edit `docs/embed.js` after the liveboard exists:
 
 ```js
 thoughtSpotHost: "https://YOUR-TRIAL-HOST",
@@ -112,6 +112,6 @@ git remote add origin https://github.com/OWNER/thoughtspot-retail-supply-chain-p
 git push -u origin main
 ```
 
-On GitHub: **Settings → Pages → Build and deployment → Deploy from a branch → main / site**. The portfolio URL will be `https://OWNER.github.io/thoughtspot-retail-supply-chain-portfolio/`.
+On GitHub: **Settings → Pages → Build and deployment → Deploy from a branch → main /docs**. The portfolio URL will be `https://OWNER.github.io/thoughtspot-retail-supply-chain-portfolio/`.
 
-Before publishing, make sure the `site/` copy retains the disclosure and does not contain credentials, access tokens, API keys, or private ThoughtSpot links that expose data.
+Before publishing, make sure the `docs/` copy retains the disclosure and does not contain credentials, access tokens, API keys, or private ThoughtSpot links that expose data.
