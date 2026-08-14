@@ -1,0 +1,8 @@
+{
+  "name": "thoughtspot-portfolio-trusted-auth",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  }
+}

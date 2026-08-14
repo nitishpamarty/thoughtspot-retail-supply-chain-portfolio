@@ -29,8 +29,11 @@ h4 { font-size: 1.4rem; }
 .dashboard-title { display: flex; align-items: center; gap: 12px; padding: 17px 20px; border-bottom: 1px solid var(--line); }
 .dashboard-title span { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; color: #fff; background: var(--blue); font-size: .75rem; font-weight: 800; }
 .liveboard { min-height: 620px; }
-.embed-placeholder { display: grid; min-height: 620px; place-content: center; padding: 32px; text-align: center; background: linear-gradient(135deg, rgba(167,228,221,.22), transparent 55%), repeating-linear-gradient(90deg, transparent, transparent 75px, rgba(13,27,42,.035) 76px); }
-.embed-placeholder .eyebrow { margin-bottom: 10px; }
+.embed-placeholder { position: relative; min-height: 620px; overflow: hidden; background: #f2f5f5; }
+.embed-placeholder img { display: block; width: 100%; min-height: 620px; object-fit: cover; object-position: top center; }
+.preview-label { position: absolute; right: 18px; bottom: 18px; padding: 10px 13px; border: 1px solid rgba(255,255,255,.82); border-radius: 9px; background: rgba(255,255,255,.93); box-shadow: 0 7px 20px -15px rgba(13,27,42,.8); }
+.preview-label .eyebrow { margin-bottom: 3px; font-size: .62rem; }
+.preview-label h4 { font-size: .86rem; }
 .embed-status { margin: 0; color: var(--muted); font-size: .86rem; text-align: center; }
 .data-flow { margin: 42px 0 28px; padding: 30px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .flow-copy { display: flex; align-items: end; justify-content: space-between; gap: 20px; }
@@ -70,7 +73,7 @@ footer { padding: 22px 0 38px; border-top: 1px solid var(--line); color: var(--m
   .hero { padding-top: 22px; }
   .dashboard-heading { display: block; }
   .dashboard-heading h2 { margin-top: 5px; }
-  .liveboard, .embed-placeholder { min-height: 480px; }
+  .liveboard, .embed-placeholder, .embed-placeholder img { min-height: 480px; }
   .flow-copy { display: block; }
   .flow-copy h2 { margin-top: 5px; }
   .flow-copy > p { margin-top: 5px; }
