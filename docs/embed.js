@@ -36,3 +36,13 @@ if (config.thoughtSpotHost && readyDashboards.length) {
     status.textContent = "The Liveboards could not load.";
   }
 }
+
+const flowStatus = document.querySelector("#flow-status");
+const flowNodes = document.querySelectorAll(".flow-node");
+
+for (const node of flowNodes) {
+  node.addEventListener("click", () => {
+    for (const item of flowNodes) item.classList.toggle("is-selected", item === node);
+    flowStatus.textContent = node.dataset.flowDetail;
+  });
+}

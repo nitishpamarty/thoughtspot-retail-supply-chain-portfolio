@@ -46,6 +46,32 @@
           </div>
         </article>
 
+        <section class="data-flow" aria-labelledby="data-flow-title">
+          <div class="flow-copy">
+            <p class="eyebrow">How it works</p>
+            <h2 id="data-flow-title">From data to decision.</h2>
+            <p>Click a stage to follow the ThoughtSpot delivery flow.</p>
+          </div>
+          <div class="flow-diagram" aria-label="Data flows from retail source tables through a semantic model and governed metrics into ThoughtSpot Liveboards.">
+            <button class="flow-node is-selected" type="button" data-flow-detail="Retail sales, inventory, and fulfillment data are prepared for analysis.">
+              <span>01</span>Source tables
+            </button>
+            <div class="flow-line" aria-hidden="true"></div>
+            <button class="flow-node" type="button" data-flow-detail="Business relationships, joins, names, and definitions are modeled for search.">
+              <span>02</span>Data model
+            </button>
+            <div class="flow-line" aria-hidden="true"></div>
+            <button class="flow-node" type="button" data-flow-detail="Revenue, margin, fill rate, and stockout metrics are defined and validated in SQL.">
+              <span>03</span>Governed metrics
+            </button>
+            <div class="flow-line" aria-hidden="true"></div>
+            <button class="flow-node" type="button" data-flow-detail="Liveboards turn the modeled metrics into drillable executive and operational decisions.">
+              <span>04</span>ThoughtSpot Liveboards
+            </button>
+          </div>
+          <p id="flow-status" class="flow-status" aria-live="polite">Retail sales, inventory, and fulfillment data are prepared for analysis.</p>
+        </section>
+
         <p id="embed-status" class="embed-status">Interactive access may require a ThoughtSpot sign-in.</p>
       </section>
     </main>

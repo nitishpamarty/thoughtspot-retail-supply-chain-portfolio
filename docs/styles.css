@@ -32,6 +32,19 @@ h4 { font-size: 1.4rem; }
 .embed-placeholder { display: grid; min-height: 620px; place-content: center; padding: 32px; text-align: center; background: linear-gradient(135deg, rgba(167,228,221,.22), transparent 55%), repeating-linear-gradient(90deg, transparent, transparent 75px, rgba(13,27,42,.035) 76px); }
 .embed-placeholder .eyebrow { margin-bottom: 10px; }
 .embed-status { margin: 0; color: var(--muted); font-size: .86rem; text-align: center; }
+.data-flow { margin: 38px 0 28px; padding: 28px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.flow-copy { display: flex; align-items: baseline; gap: 14px; }
+.flow-copy .eyebrow { margin: 0; }
+.flow-copy h2 { font-size: 1.45rem; }
+.flow-copy p:last-child { margin: 0 0 0 auto; color: var(--muted); font-size: .86rem; }
+.flow-diagram { display: flex; align-items: center; margin-top: 23px; }
+.flow-node { display: grid; gap: 5px; min-width: 132px; padding: 0; border: 0; color: var(--muted); background: transparent; font: inherit; font-size: .86rem; font-weight: 700; text-align: left; cursor: pointer; }
+.flow-node span { display: grid; place-items: center; width: 29px; height: 29px; border: 1px solid var(--line); border-radius: 50%; color: var(--blue); background: var(--card); font-size: .7rem; }
+.flow-node.is-selected { color: var(--ink); }
+.flow-node.is-selected span, .flow-node:hover span { color: #fff; border-color: var(--blue); background: var(--blue); }
+.flow-line { flex: 1; min-width: 28px; height: 2px; margin: 0 9px; background-image: radial-gradient(circle, var(--blue) 1px, transparent 1.5px); background-position: 0 center; background-size: 12px 2px; animation: moving-dots 1.25s linear infinite; }
+.flow-status { min-height: 24px; margin: 20px 0 0; color: var(--muted); font-size: .92rem; }
+@keyframes moving-dots { to { background-position: 12px center; } }
 footer { padding: 22px 0 38px; border-top: 1px solid var(--line); color: var(--muted); font-size: .8rem; text-align: center; }
 
 @media (max-width: 620px) {
@@ -39,4 +52,11 @@ footer { padding: 22px 0 38px; border-top: 1px solid var(--line); color: var(--m
   .dashboard-heading { display: block; }
   .dashboard-heading h2 { margin-top: 5px; }
   .liveboard, .embed-placeholder { min-height: 480px; }
+  .flow-copy { display: block; }
+  .flow-copy h2 { margin-top: 5px; }
+  .flow-copy p:last-child { margin: 5px 0 0; }
+  .flow-diagram { align-items: stretch; flex-direction: column; gap: 8px; }
+  .flow-node { grid-template-columns: 30px 1fr; align-items: center; min-width: 0; }
+  .flow-line { flex: none; width: 2px; height: 19px; margin: 0 0 0 14px; background-position: center 0; background-size: 2px 12px; animation-name: moving-dots-down; }
+  @keyframes moving-dots-down { to { background-position: center 12px; } }
 }
