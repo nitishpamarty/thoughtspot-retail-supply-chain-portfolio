@@ -1,9 +1,9 @@
 // Public configuration only. Never place passwords, API tokens, or private URLs here.
 const config = {
-  thoughtSpotHost: "",
+  thoughtSpotHost: "https://team1.thoughtspot.cloud",
   dashboards: [
-    { targetId: "executive-liveboard", liveboardId: "" },
-    { targetId: "inventory-liveboard", liveboardId: "" },
+    { targetId: "executive-liveboard", liveboardId: "bd7b5c81-ed4f-47f7-b809-f9c2bd81573f" },
+    { targetId: "inventory-liveboard", liveboardId: "1e0245fd-528b-48ff-978f-fc2d8f614bb6" },
   ],
 };
 
@@ -38,7 +38,7 @@ if (config.thoughtSpotHost && readyDashboards.length) {
 }
 
 const flowStatus = document.querySelector("#flow-status");
-const flowNodes = document.querySelectorAll(".flow-node");
+const flowNodes = document.querySelectorAll(".flow-card");
 
 for (const node of flowNodes) {
   node.addEventListener("click", () => {

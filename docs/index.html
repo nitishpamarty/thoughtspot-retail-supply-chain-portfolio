@@ -48,28 +48,50 @@
 
         <section class="data-flow" aria-labelledby="data-flow-title">
           <div class="flow-copy">
-            <p class="eyebrow">How it works</p>
-            <h2 id="data-flow-title">From data to decision.</h2>
-            <p>Click a stage to follow the ThoughtSpot delivery flow.</p>
+            <div>
+              <p class="eyebrow">ThoughtSpot delivery flow</p>
+              <h2 id="data-flow-title">From retail data to a decision.</h2>
+            </div>
+            <p>Follow the moving data paths.</p>
           </div>
-          <div class="flow-diagram" aria-label="Data flows from retail source tables through a semantic model and governed metrics into ThoughtSpot Liveboards.">
-            <button class="flow-node is-selected" type="button" data-flow-detail="Retail sales, inventory, and fulfillment data are prepared for analysis.">
-              <span>01</span>Source tables
+
+          <div class="flow-canvas" aria-label="Retail source data is modeled, converted to governed metrics, and delivered to two ThoughtSpot Liveboards.">
+            <svg class="flow-paths" viewBox="0 0 1160 400" preserveAspectRatio="none" aria-hidden="true">
+              <path class="flow-path teal-path" d="M284 185 C310 185 318 128 347 128" />
+              <path class="flow-path orange-path" d="M284 205 C310 205 318 270 347 270" />
+              <path class="flow-path teal-path" d="M664 128 C700 128 704 155 731 155" />
+              <path class="flow-path orange-path" d="M664 270 C700 270 704 245 731 245" />
+              <path class="flow-path blue-path" d="M944 200 C970 200 977 200 1010 200" />
+            </svg>
+
+            <button class="flow-card source-card is-selected" type="button" data-flow-detail="Synthetic sales, inventory, and fulfillment data establish the retail operating picture.">
+              <span class="flow-step">01 · Source data</span>
+              <strong>Retail operations</strong>
+              <small>sales · inventory · fulfillment</small>
             </button>
-            <div class="flow-line" aria-hidden="true"></div>
-            <button class="flow-node" type="button" data-flow-detail="Business relationships, joins, names, and definitions are modeled for search.">
-              <span>02</span>Data model
+
+            <button class="flow-card model-card" type="button" data-flow-detail="The Retail Operations Metrics model organizes relationships, joins, and business-friendly names for analysis.">
+              <span class="flow-step">02 · Model</span>
+              <strong>Retail Operations Metrics</strong>
+              <small>relationships · joins · search-ready fields</small>
+              <span class="model-join"><i></i><i></i><i></i><b>joined</b></span>
             </button>
-            <div class="flow-line" aria-hidden="true"></div>
-            <button class="flow-node" type="button" data-flow-detail="Revenue, margin, fill rate, and stockout metrics are defined and validated in SQL.">
-              <span>03</span>Governed metrics
+
+            <button class="flow-card metrics-card" type="button" data-flow-detail="Validated SQL definitions become governed metrics used consistently across both Liveboards.">
+              <span class="flow-step">03 · Governed metrics</span>
+              <strong>Revenue · fill rate</strong>
+              <small>margin · stockout rate</small>
+              <span class="metric-pills"><i>SQL</i><i>KPI</i><i>QA</i></span>
             </button>
-            <div class="flow-line" aria-hidden="true"></div>
-            <button class="flow-node" type="button" data-flow-detail="Liveboards turn the modeled metrics into drillable executive and operational decisions.">
-              <span>04</span>ThoughtSpot Liveboards
+
+            <button class="flow-card liveboards-card" type="button" data-flow-detail="ThoughtSpot makes the governed model available through two interactive Liveboards for executive and operational decisions.">
+              <span class="flow-step">04 · ThoughtSpot</span>
+              <strong>Two Liveboards</strong>
+              <small>Executive · Inventory &amp; fulfillment</small>
+              <span class="liveboard-bars"><i></i><i></i><i></i></span>
             </button>
           </div>
-          <p id="flow-status" class="flow-status" aria-live="polite">Retail sales, inventory, and fulfillment data are prepared for analysis.</p>
+          <p id="flow-status" class="flow-status" aria-live="polite">Synthetic sales, inventory, and fulfillment data establish the retail operating picture.</p>
         </section>
 
         <p id="embed-status" class="embed-status">Interactive access may require a ThoughtSpot sign-in.</p>

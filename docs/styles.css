@@ -32,19 +32,38 @@ h4 { font-size: 1.4rem; }
 .embed-placeholder { display: grid; min-height: 620px; place-content: center; padding: 32px; text-align: center; background: linear-gradient(135deg, rgba(167,228,221,.22), transparent 55%), repeating-linear-gradient(90deg, transparent, transparent 75px, rgba(13,27,42,.035) 76px); }
 .embed-placeholder .eyebrow { margin-bottom: 10px; }
 .embed-status { margin: 0; color: var(--muted); font-size: .86rem; text-align: center; }
-.data-flow { margin: 38px 0 28px; padding: 28px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.flow-copy { display: flex; align-items: baseline; gap: 14px; }
-.flow-copy .eyebrow { margin: 0; }
-.flow-copy h2 { font-size: 1.45rem; }
-.flow-copy p:last-child { margin: 0 0 0 auto; color: var(--muted); font-size: .86rem; }
-.flow-diagram { display: flex; align-items: center; margin-top: 23px; }
-.flow-node { display: grid; gap: 5px; min-width: 132px; padding: 0; border: 0; color: var(--muted); background: transparent; font: inherit; font-size: .86rem; font-weight: 700; text-align: left; cursor: pointer; }
-.flow-node span { display: grid; place-items: center; width: 29px; height: 29px; border: 1px solid var(--line); border-radius: 50%; color: var(--blue); background: var(--card); font-size: .7rem; }
-.flow-node.is-selected { color: var(--ink); }
-.flow-node.is-selected span, .flow-node:hover span { color: #fff; border-color: var(--blue); background: var(--blue); }
-.flow-line { flex: 1; min-width: 28px; height: 2px; margin: 0 9px; background-image: radial-gradient(circle, var(--blue) 1px, transparent 1.5px); background-position: 0 center; background-size: 12px 2px; animation: moving-dots 1.25s linear infinite; }
-.flow-status { min-height: 24px; margin: 20px 0 0; color: var(--muted); font-size: .92rem; }
-@keyframes moving-dots { to { background-position: 12px center; } }
+.data-flow { margin: 42px 0 28px; padding: 30px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.flow-copy { display: flex; align-items: end; justify-content: space-between; gap: 20px; }
+.flow-copy .eyebrow { margin: 0 0 5px; }
+.flow-copy h2 { font-size: 1.55rem; }
+.flow-copy > p { margin: 0 0 4px; color: var(--muted); font-size: .86rem; }
+.flow-canvas { position: relative; display: grid; grid-template-columns: 1.1fr 1.38fr .92fr .78fr; grid-template-rows: 1fr; gap: 5.6%; min-height: 312px; margin-top: 23px; overflow: hidden; border: 1px solid #dfe6e8; border-radius: 14px; background: linear-gradient(120deg, #fbfefd, #f5faf9); }
+.flow-canvas::before { content: ""; position: absolute; inset: 0; opacity: .56; background-image: linear-gradient(rgba(13,27,42,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(13,27,42,.045) 1px, transparent 1px); background-size: 30px 30px; pointer-events: none; }
+.flow-paths { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; overflow: visible; }
+.flow-path { fill: none; stroke-width: 3.5; stroke-linecap: round; stroke-dasharray: 3 15; animation: flow-forward 1.05s linear infinite; }
+.teal-path { stroke: #00a757; }
+.orange-path { stroke: #eb6700; animation-duration: 1.35s; }
+.blue-path { stroke: var(--blue); animation-duration: 1.18s; }
+@keyframes flow-forward { to { stroke-dashoffset: -18; } }
+.flow-card { position: relative; z-index: 2; align-self: center; display: flex; flex-direction: column; gap: 5px; min-width: 0; padding: 18px; border: 1px solid #dce3e5; border-radius: 10px; color: var(--ink); background: rgba(255,255,255,.96); box-shadow: 0 10px 26px -24px rgba(13,27,42,.8); font: inherit; text-align: left; cursor: pointer; transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+.flow-card:hover, .flow-card:focus-visible, .flow-card.is-selected { border-color: var(--blue); box-shadow: 0 12px 28px -20px rgba(10,93,126,.5); transform: translateY(-3px); outline: none; }
+.flow-card:focus-visible { outline: 3px solid rgba(10,93,126,.25); outline-offset: 3px; }
+.source-card { grid-column: 1; margin-left: 25px; }
+.model-card { grid-column: 2; }
+.metrics-card { grid-column: 3; }
+.liveboards-card { grid-column: 4; margin-right: 20px; }
+.flow-step { color: var(--blue); font-size: .67rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.flow-card strong { font-size: .98rem; letter-spacing: -.015em; line-height: 1.22; }
+.flow-card small { color: var(--muted); font-size: .76rem; line-height: 1.35; }
+.model-join { display: flex; align-items: center; gap: 4px; margin-top: 8px; }
+.model-join i { width: 17px; height: 10px; border: 1px solid var(--blue); border-radius: 2px; background: #e9f5f7; }
+.model-join b { margin-left: 4px; color: var(--blue); font-size: .66rem; letter-spacing: .06em; text-transform: uppercase; }
+.metric-pills { display: flex; gap: 5px; margin-top: 8px; }
+.metric-pills i { padding: 2px 5px; border-radius: 4px; color: #0b6f48; background: #dff6e7; font-size: .62rem; font-style: normal; font-weight: 800; }
+.liveboard-bars { display: flex; align-items: end; gap: 3px; height: 20px; margin-top: 7px; }
+.liveboard-bars i { display: block; width: 7px; background: var(--blue); }
+.liveboard-bars i:nth-child(1) { height: 7px; }.liveboard-bars i:nth-child(2) { height: 14px; }.liveboard-bars i:nth-child(3) { height: 20px; }
+.flow-status { min-height: 24px; margin: 16px 0 0; color: var(--muted); font-size: .88rem; }
 footer { padding: 22px 0 38px; border-top: 1px solid var(--line); color: var(--muted); font-size: .8rem; text-align: center; }
 
 @media (max-width: 620px) {
@@ -54,9 +73,10 @@ footer { padding: 22px 0 38px; border-top: 1px solid var(--line); color: var(--m
   .liveboard, .embed-placeholder { min-height: 480px; }
   .flow-copy { display: block; }
   .flow-copy h2 { margin-top: 5px; }
-  .flow-copy p:last-child { margin: 5px 0 0; }
-  .flow-diagram { align-items: stretch; flex-direction: column; gap: 8px; }
-  .flow-node { grid-template-columns: 30px 1fr; align-items: center; min-width: 0; }
-  .flow-line { flex: none; width: 2px; height: 19px; margin: 0 0 0 14px; background-position: center 0; background-size: 2px 12px; animation-name: moving-dots-down; }
-  @keyframes moving-dots-down { to { background-position: center 12px; } }
+  .flow-copy > p { margin-top: 5px; }
+  .flow-canvas { grid-template-columns: 1fr; grid-template-rows: repeat(4, auto); gap: 22px; min-height: 0; padding: 22px; }
+  .flow-paths { display: none; }
+  .flow-card, .source-card, .model-card, .metrics-card, .liveboards-card { grid-column: 1; margin: 0; }
 }
+
+@media (prefers-reduced-motion: reduce) { .flow-path { animation: none; } .flow-card { transition: none; } }
