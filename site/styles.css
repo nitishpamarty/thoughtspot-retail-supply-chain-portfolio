@@ -1,0 +1,61 @@
+:root {
+  --ink: #0d1b2a;
+  --muted: #536174;
+  --paper: #f7f8f7;
+  --blue: #0a5d7e;
+  --aqua: #a7e4dd;
+  --orange: #f6aa5c;
+  --line: #d7dde0;
+  --card: #ffffff;
+  --shadow: 0 16px 36px -28px rgba(13, 27, 42, .52);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--ink); background: var(--paper); font: 16px/1.55 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.shell { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+.hero { padding: 86px 0 54px; background: radial-gradient(circle at 91% 7%, rgba(167, 228, 221, .7), transparent 26rem), linear-gradient(145deg, #f7f8f7 0%, #e9f5f3 100%); }
+.hero::before { content: ""; position: absolute; inset: 0 0 auto; height: 4px; background: linear-gradient(90deg, var(--blue), var(--aqua), var(--orange)); }
+.eyebrow { color: var(--blue); font-size: .75rem; font-weight: 750; letter-spacing: .11em; text-transform: uppercase; margin: 0 0 14px; }
+h1, h2, h3, p { margin-top: 0; }
+h1, h2 { letter-spacing: -.035em; line-height: 1.06; }
+h1 { max-width: 800px; font-size: clamp(2.65rem, 7vw, 5.25rem); margin-bottom: 22px; }
+h2 { font-size: clamp(2rem, 4vw, 3.3rem); margin-bottom: 18px; }
+h3 { font-size: 1.15rem; margin-bottom: 8px; }
+.lede { max-width: 700px; color: var(--muted); font-size: 1.18rem; }
+.notice { display: inline-block; margin: 12px 0 30px; padding: 7px 12px; border: 1px solid rgba(10, 93, 126, .3); border-radius: 999px; color: var(--blue); font-size: .84rem; font-weight: 650; }
+nav { display: flex; flex-wrap: wrap; gap: 18px; }
+a { color: var(--blue); }
+nav a { color: var(--ink); font-size: .92rem; font-weight: 700; text-underline-offset: 4px; }
+.metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: 0; background: var(--line); box-shadow: var(--shadow); }
+.metrics article { min-height: 150px; padding: 25px; background: var(--card); }
+.metrics span, .metrics small { display: block; color: var(--muted); font-size: .83rem; }
+.metrics strong { display: block; margin: 7px 0; font-size: 2rem; letter-spacing: -.04em; }
+.section { padding: 88px 0; border-bottom: 1px solid var(--line); }
+.section-heading { max-width: 750px; }
+.section-heading > p:last-child, .story-copy > p { color: var(--muted); max-width: 700px; }
+.liveboard { min-height: 570px; margin-top: 36px; overflow: hidden; border: 1px solid var(--line); border-radius: 14px; background: var(--card); box-shadow: var(--shadow); }
+.embed-placeholder { display: grid; min-height: 570px; place-content: center; padding: 38px; text-align: center; background: linear-gradient(135deg, rgba(167,228,221,.25), transparent 55%), repeating-linear-gradient(90deg, transparent, transparent 75px, rgba(13,27,42,.035) 76px); }
+.embed-placeholder h3 { font-size: 1.6rem; }
+.embed-placeholder p:last-child { max-width: 510px; color: var(--muted); }
+.embed-status { margin: 16px 0 0; color: var(--muted); font-size: .9rem; }
+.story-grid { display: grid; grid-template-columns: minmax(220px, .85fr) minmax(0, 1.15fr); gap: 70px; }
+.story-copy { font-size: 1.05rem; }
+.finding, .recommendation { margin-top: 22px; padding: 22px; border-left: 4px solid var(--blue); background: var(--card); box-shadow: var(--shadow); }
+.recommendation { border-color: var(--orange); }
+.finding span, .recommendation span { display: block; margin-bottom: 5px; color: var(--muted); font-size: .75rem; font-weight: 750; letter-spacing: .1em; text-transform: uppercase; }
+.cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 38px; }
+.cards article { padding: 26px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); box-shadow: var(--shadow); }
+.cards p { margin: 0; color: var(--muted); }
+footer { padding: 32px 0 55px; color: var(--muted); font-size: .85rem; }
+footer p { margin-bottom: 8px; }
+
+@media (max-width: 720px) {
+  .hero { padding-top: 65px; }
+  .metrics { grid-template-columns: repeat(2, 1fr); }
+  .metrics article { min-height: 125px; padding: 18px; }
+  .section { padding: 62px 0; }
+  .story-grid, .cards { grid-template-columns: 1fr; gap: 25px; }
+  .liveboard, .embed-placeholder { min-height: 450px; }
+}
+

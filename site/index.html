@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A self-directed ThoughtSpot retail and supply-chain analytics portfolio by Nitish Pamarty." />
+    <title>ThoughtSpot Retail & Supply Chain Portfolio — Nitish Pamarty</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <section class="hero shell">
+        <p class="eyebrow">ThoughtSpot · BI development · retail operations</p>
+        <h1>From a business question to an operational decision.</h1>
+        <p class="lede">A ThoughtSpot Liveboard case study designed for executive, merchandising, and supply-chain stakeholders—with governed metrics, drillable analysis, and a clear action path.</p>
+        <div class="notice">Self-directed portfolio project · all underlying data is synthetic</div>
+        <nav aria-label="Page sections">
+          <a href="#liveboard">Interactive Liveboard</a>
+          <a href="#story">Business story</a>
+          <a href="#delivery">Delivery approach</a>
+        </nav>
+      </section>
+
+      <section class="metrics shell" aria-label="Key performance indicators">
+        <article><span>Net revenue</span><strong>$6.31M</strong><small>180-day synthetic data set</small></article>
+        <article><span>Gross margin</span><strong>46.9%</strong><small>Revenue-weighted definition</small></article>
+        <article><span>Fill rate</span><strong>99.0%</strong><small>Order-weighted definition</small></article>
+        <article><span>Stockout rate</span><strong>2.1%</strong><small>Store-category-day grain</small></article>
+      </section>
+
+      <section id="liveboard" class="shell section">
+        <div class="section-heading">
+          <p class="eyebrow">01 — Liveboard</p>
+          <h2>Executive Commerce &amp; Supply Chain Command Center</h2>
+          <p>The embedded Liveboard is configured after publishing from the ThoughtSpot tenant. It is intentionally paired with the project narrative below so the case study remains reviewable if a trial requires viewer sign-in.</p>
+        </div>
+        <div id="thoughtspot-liveboard" class="liveboard" aria-live="polite">
+          <div class="embed-placeholder">
+            <p class="eyebrow">ThoughtSpot embed</p>
+            <h3>Liveboard configuration pending</h3>
+            <p>Once published, this panel will contain a drillable ThoughtSpot Liveboard with KPI tiles, revenue and margin trends, regional performance, and inventory risk.</p>
+          </div>
+        </div>
+        <p id="embed-status" class="embed-status">The public portfolio includes the completed case-study evidence below. The Liveboard adds an authenticated, interactive walkthrough when enabled.</p>
+      </section>
+
+      <section id="story" class="shell section story-grid">
+        <div>
+          <p class="eyebrow">02 — The business story</p>
+          <h2>A specific issue, not dashboard decoration.</h2>
+        </div>
+        <div class="story-copy">
+          <p>Midway through the reporting period, Consumer Electronics inventory fell beneath reorder targets. The disruption appeared across the network, with Pacific stores most exposed. The important question was not merely “what is the stockout rate?”—it was where to prioritize replenishment before sales and service levels deteriorated.</p>
+          <div class="finding"><span>Finding</span><strong>Consumer Electronics is the highest-risk category during the replenishment disruption, led by Pacific stores.</strong></div>
+          <div class="recommendation"><span>Recommended action</span><strong>Prioritize replenishment and supplier-expedite decisions for affected Pacific store/category combinations; monitor fill-rate recovery daily.</strong></div>
+        </div>
+      </section>
+
+      <section id="delivery" class="shell section">
+        <p class="eyebrow">03 — Delivery approach</p>
+        <h2>Built to be useful, explainable, and maintainable.</h2>
+        <div class="cards">
+          <article><h3>Semantic layer first</h3><p>Business-friendly names and governed definitions make search productive for non-technical partners.</p></article>
+          <article><h3>Metrics validated in SQL</h3><p>Margin, fill rate, and on-time shipment use weighted formulas to avoid misleading averages.</p></article>
+          <article><h3>Audience-specific design</h3><p>Separate executive, operations, and regional-manager views keep the decision path clear.</p></article>
+          <article><h3>Repeatable delivery</h3><p>Synthetic data generation, documented KPI logic, and TML export make the build portable and reviewable.</p></article>
+        </div>
+      </section>
+    </main>
+    <footer class="shell">
+      <p>Built by Nitish Pamarty · <a href="https://www.linkedin.com/in/nitishpamarty/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/nitishpamarty" target="_blank" rel="noopener">GitHub</a></p>
+      <p>Self-directed demonstration using synthetic data. It does not represent client or employer work.</p>
+    </footer>
+    <script type="module" src="embed.js"></script>
+  </body>
+</html>
