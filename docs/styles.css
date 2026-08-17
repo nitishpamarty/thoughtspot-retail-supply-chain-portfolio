@@ -47,7 +47,7 @@ h4 { font-size: 1.4rem; }
 .teal-path { stroke: #00a757; }
 .orange-path { stroke: #eb6700; animation-duration: 1.35s; }
 .blue-path { stroke: var(--blue); animation-duration: 1.18s; }
-.stage-path { stroke-width: 4.25; stroke-dasharray: 4 12; }
+.stage-path { stroke-width: 5.5; stroke-dasharray: 5 11; filter: drop-shadow(0 1px 1px rgba(13,27,42,.16)); }
 .join-hub { fill: #00a757; stroke: #fff; stroke-width: 3; filter: drop-shadow(0 2px 2px rgba(0,0,0,.15)); animation: join-pulse 1.5s ease-in-out infinite; }
 @keyframes flow-forward { to { stroke-dashoffset: -18; } }
 @keyframes join-pulse { 50% { r: 9; opacity: .72; } }
@@ -71,10 +71,11 @@ h4 { font-size: 1.4rem; }
 .table-cell b { overflow: hidden; color: #24516b; font-size: .58rem; line-height: 1.15; text-overflow: ellipsis; white-space: nowrap; }
 .table-cell i { overflow: hidden; color: #5d7180; font-size: .54rem; font-style: normal; line-height: 1.15; text-overflow: ellipsis; white-space: nowrap; }
 .join-rules { display: grid; gap: 5px; margin-top: 2px; }
-.join-rules i { display: flex; justify-content: space-between; gap: 5px; padding-bottom: 4px; border-bottom: 1px dashed #cad8dc; color: #38576c; font-size: .61rem; font-style: normal; line-height: 1.15; }
+.join-caption { margin-top: 2px; color: var(--blue) !important; font-size: .64rem !important; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+.join-rules i { display: flex; justify-content: space-between; gap: 5px; padding: 4px 0; border-bottom: 1px dashed #aac3cb; color: #38576c; font-size: .68rem; font-style: normal; line-height: 1.15; }
 .join-rules i:last-child { padding-bottom: 0; border-bottom: 0; }
-.join-rules b { font-weight: 760; }
-.join-rules em { color: var(--blue); font-size: .58rem; font-style: normal; white-space: nowrap; }
+.join-rules b { font-weight: 780; }
+.join-rules em { color: var(--blue); font-size: .64rem; font-style: normal; font-weight: 750; white-space: nowrap; }
 .metric-pills { display: flex; gap: 5px; margin-top: 8px; }
 .metric-pills i { padding: 2px 5px; border-radius: 4px; color: #0b6f48; background: #dff6e7; font-size: .62rem; font-style: normal; font-weight: 800; }
 .liveboard-bars { display: flex; align-items: end; gap: 3px; height: 20px; margin-top: 7px; }
