@@ -1,8 +1,8 @@
 // Public configuration only. Never place passwords, API tokens, or private URLs here.
 const config = {
   thoughtSpotHost: "https://team1.thoughtspot.cloud",
-  // Set this after deploying trusted-auth-service. Never put a secret in this file.
-  trustedAuthEndpoint: "",
+  // Vercel keeps the ThoughtSpot secret server-side. Never put a secret in this file.
+  trustedAuthEndpoint: "https://thoughtspot-portfolio-auth.vercel.app/api/thoughtspot-token",
   viewerUsername: "portfolio_viewer1",
   dashboards: [
     { targetId: "executive-liveboard", liveboardId: "bd7b5c81-ed4f-47f7-b809-f9c2bd81573f" },
