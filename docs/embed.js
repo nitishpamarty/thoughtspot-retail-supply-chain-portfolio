@@ -5,7 +5,7 @@ const config = {
   trustedAuthEndpoint: "https://thoughtspot-portfolio-auth.vercel.app/api/thoughtspot-token",
   viewerUsername: "portfolio_viewer1",
   dashboards: [
-    { targetId: "executive-liveboard", liveboardId: "bd7b5c81-ed4f-47f7-b809-f9c2bd81573f" },
+    { targetId: "executive-liveboard", liveboardId: "e92b99c3-2d7b-4622-b5a7-abab67b9f279" },
     { targetId: "inventory-liveboard", liveboardId: "1e0245fd-528b-48ff-978f-fc2d8f614bb6" },
   ],
 };
