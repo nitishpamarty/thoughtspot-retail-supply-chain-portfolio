@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="ThoughtSpot retail and supply-chain Liveboards by Nitish Pamarty." />
     <title>ThoughtSpot Retail Operations — Nitish Pamarty</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=modeling-flow" />
   </head>
   <body>
     <main>
@@ -49,49 +49,57 @@
         <section class="data-flow" aria-labelledby="data-flow-title">
           <div class="flow-copy">
             <div>
-              <p class="eyebrow">ThoughtSpot delivery flow</p>
-              <h2 id="data-flow-title">From retail data to a decision.</h2>
+              <p class="eyebrow">BI modeling workflow</p>
+              <h2 id="data-flow-title">From operational tables to a decision.</h2>
             </div>
-            <p>Follow the moving data paths.</p>
+            <p>Joins · QA · semantic model · governed KPIs</p>
           </div>
 
-          <div class="flow-canvas" aria-label="Retail source data is modeled, converted to governed metrics, and delivered to two ThoughtSpot Liveboards.">
+          <div class="flow-canvas" aria-label="Operational retail tables are joined and validated with SQL, modeled in ThoughtSpot, converted to governed metrics, and delivered to two Liveboards.">
             <svg class="flow-paths" viewBox="0 0 1160 400" preserveAspectRatio="none" aria-hidden="true">
-              <path class="flow-path teal-path" d="M284 185 C310 185 318 128 347 128" />
-              <path class="flow-path orange-path" d="M284 205 C310 205 318 270 347 270" />
-              <path class="flow-path teal-path" d="M664 128 C700 128 704 155 731 155" />
-              <path class="flow-path orange-path" d="M664 270 C700 270 704 245 731 245" />
-              <path class="flow-path blue-path" d="M944 200 C970 200 977 200 1010 200" />
+              <path class="flow-path teal-path" d="M205 145 C225 145 236 130 258 130" />
+              <path class="flow-path orange-path" d="M205 255 C225 255 236 270 258 270" />
+              <path class="flow-path blue-path" d="M445 200 C462 200 470 200 488 200" />
+              <path class="flow-path teal-path" d="M680 200 C698 200 705 200 723 200" />
+              <path class="flow-path orange-path" d="M868 200 C886 200 894 200 912 200" />
             </svg>
 
-            <button class="flow-card source-card is-selected" type="button" data-flow-detail="Synthetic sales, inventory, and fulfillment data establish the retail operating picture.">
-              <span class="flow-step">01 · Source data</span>
-              <strong>Retail operations</strong>
-              <small>sales · inventory · fulfillment</small>
+            <button class="flow-card tables-card is-selected" type="button" data-flow-detail="Synthetic portfolio data is structured as distinct operational fact and dimension tables, mirroring a retail data environment rather than a single flat file.">
+              <span class="flow-step">01 · Operational tables</span>
+              <strong>Retail source layer</strong>
+              <small>facts + shared dimensions</small>
+              <span class="table-stack"><i>orders</i><i>order_lines</i><i>inventory_snapshot</i><i>fulfillment_events</i></span>
             </button>
 
-            <button class="flow-card model-card" type="button" data-flow-detail="The Retail Operations Metrics model organizes relationships, joins, and business-friendly names for analysis.">
-              <span class="flow-step">02 · Model</span>
+            <button class="flow-card sql-card" type="button" data-flow-detail="SQL joins align orders, line items, inventory, fulfillment, product, location, and calendar keys. Grain checks, duplicate-key checks, and reconciliations validate the model before BI consumption.">
+              <span class="flow-step">02 · SQL integration + QA</span>
+              <strong>Join at the right grain</strong>
+              <small>order_id · sku_id · location_id</small>
+              <span class="metric-pills"><i>JOIN</i><i>GRAIN</i><i>QA</i></span>
+            </button>
+
+            <button class="flow-card thoughtspot-model-card" type="button" data-flow-detail="The Retail Operations Metrics ThoughtSpot model exposes governed relationships, business-friendly fields, and searchable dimensions for self-service analysis.">
+              <span class="flow-step">03 · ThoughtSpot model</span>
               <strong>Retail Operations Metrics</strong>
-              <small>relationships · joins · search-ready fields</small>
+              <small>relationships · dimensions · search-ready fields</small>
               <span class="model-join"><i></i><i></i><i></i><b>joined</b></span>
             </button>
 
-            <button class="flow-card metrics-card" type="button" data-flow-detail="Validated SQL definitions become governed metrics used consistently across both Liveboards.">
-              <span class="flow-step">03 · Governed metrics</span>
+            <button class="flow-card metrics-card" type="button" data-flow-detail="Validated SQL definitions become governed metrics—revenue, margin, fill rate, and stockout rate—used consistently across both Liveboards.">
+              <span class="flow-step">04 · Governed metrics</span>
               <strong>Revenue · fill rate</strong>
               <small>margin · stockout rate</small>
               <span class="metric-pills"><i>SQL</i><i>KPI</i><i>QA</i></span>
             </button>
 
             <button class="flow-card liveboards-card" type="button" data-flow-detail="ThoughtSpot makes the governed model available through two interactive Liveboards for executive and operational decisions.">
-              <span class="flow-step">04 · ThoughtSpot</span>
+              <span class="flow-step">05 · ThoughtSpot</span>
               <strong>Two Liveboards</strong>
               <small>Executive · Inventory &amp; fulfillment</small>
               <span class="liveboard-bars"><i></i><i></i><i></i></span>
             </button>
           </div>
-          <p id="flow-status" class="flow-status" aria-live="polite">Synthetic sales, inventory, and fulfillment data establish the retail operating picture.</p>
+          <p id="flow-status" class="flow-status" aria-live="polite">Synthetic portfolio data is structured as distinct operational fact and dimension tables, mirroring a retail data environment rather than a single flat file.</p>
         </section>
 
         <p id="embed-status" class="embed-status">Loading interactive ThoughtSpot Liveboards…</p>
