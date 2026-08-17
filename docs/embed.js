@@ -3,7 +3,7 @@ const config = {
   thoughtSpotHost: "https://team1.thoughtspot.cloud",
   // Set this after deploying trusted-auth-service. Never put a secret in this file.
   trustedAuthEndpoint: "",
-  viewerUsername: "portfolio_viewer",
+  viewerUsername: "portfolio_viewer1",
   dashboards: [
     { targetId: "executive-liveboard", liveboardId: "bd7b5c81-ed4f-47f7-b809-f9c2bd81573f" },
     { targetId: "inventory-liveboard", liveboardId: "1e0245fd-528b-48ff-978f-fc2d8f614bb6" },

@@ -1,6 +1,6 @@
 # ThoughtSpot trusted-auth service
 
-This Vercel serverless endpoint creates short-lived tokens for the restricted `portfolio_viewer` ThoughtSpot user. The secret is read only from Vercel environment variables and is never part of the public GitHub Pages site.
+This Vercel serverless endpoint creates short-lived tokens for the restricted `portfolio_viewer1` ThoughtSpot user. The secret is read only from Vercel environment variables and is never part of the public GitHub Pages site.
 
 ## Deploy
 
