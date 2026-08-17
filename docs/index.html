@@ -57,31 +57,44 @@
 
           <div class="flow-canvas" aria-label="Operational retail tables are joined and validated with SQL, modeled in ThoughtSpot, converted to governed metrics, and delivered to two Liveboards.">
             <svg class="flow-paths" viewBox="0 0 1160 400" preserveAspectRatio="none" aria-hidden="true">
-              <path class="flow-path teal-path" d="M205 145 C225 145 236 130 258 130" />
-              <path class="flow-path orange-path" d="M205 255 C225 255 236 270 258 270" />
-              <path class="flow-path blue-path" d="M445 200 C462 200 470 200 488 200" />
-              <path class="flow-path teal-path" d="M680 200 C698 200 705 200 723 200" />
-              <path class="flow-path orange-path" d="M868 200 C886 200 894 200 912 200" />
+              <path class="flow-path teal-path" d="M183 100 C198 100 201 178 215 188" />
+              <path class="flow-path orange-path" d="M183 148 C198 148 202 185 215 194" />
+              <path class="flow-path blue-path" d="M183 212 C198 212 202 207 215 202" />
+              <path class="flow-path teal-path" d="M183 260 C198 260 201 214 215 208" />
+              <circle class="join-hub" cx="215" cy="200" r="7" />
+              <path class="flow-path blue-path stage-path" d="M222 200 L241 200" />
+              <path class="flow-path orange-path stage-path" d="M470 200 L528 200" />
+              <path class="flow-path teal-path stage-path" d="M737 200 L795 200" />
+              <path class="flow-path blue-path stage-path" d="M953 200 L1011 200" />
             </svg>
 
             <button class="flow-card tables-card is-selected" type="button" data-flow-detail="Synthetic portfolio data is structured as distinct operational fact and dimension tables, mirroring a retail data environment rather than a single flat file.">
               <span class="flow-step">01 · Operational tables</span>
               <strong>Retail source layer</strong>
               <small>facts + shared dimensions</small>
-              <span class="table-stack"><i>orders</i><i>order_lines</i><i>inventory_snapshot</i><i>fulfillment_events</i></span>
+              <span class="source-tables">
+                <span class="table-cell"><b>orders</b><i>order_id</i></span>
+                <span class="table-cell"><b>order_lines</b><i>order_id · sku_id</i></span>
+                <span class="table-cell"><b>inventory_category</b><i>sku_id · location_id</i></span>
+                <span class="table-cell"><b>fulfillment_events</b><i>order_id · event_date</i></span>
+              </span>
             </button>
 
             <button class="flow-card sql-card" type="button" data-flow-detail="SQL joins align orders, line items, inventory, fulfillment, product, location, and calendar keys. Grain checks, duplicate-key checks, and reconciliations validate the model before BI consumption.">
               <span class="flow-step">02 · SQL integration + QA</span>
               <strong>Join at the right grain</strong>
-              <small>order_id · sku_id · location_id</small>
+              <span class="join-rules">
+                <i><b>orders ↔ order_lines</b><em>order_id</em></i>
+                <i><b>lines ↔ inventory</b><em>sku_id + location_id</em></i>
+                <i><b>orders ↔ fulfillment</b><em>order_id</em></i>
+              </span>
               <span class="metric-pills"><i>JOIN</i><i>GRAIN</i><i>QA</i></span>
             </button>
 
-            <button class="flow-card thoughtspot-model-card" type="button" data-flow-detail="The Retail Operations Metrics ThoughtSpot model exposes governed relationships, business-friendly fields, and searchable dimensions for self-service analysis.">
+            <button class="flow-card thoughtspot-model-card" type="button" data-flow-detail="The validated joined dataset is brought into the Retail Operations Metrics ThoughtSpot model with governed relationships, business-friendly fields, and searchable dimensions for self-service analysis.">
               <span class="flow-step">03 · ThoughtSpot model</span>
               <strong>Retail Operations Metrics</strong>
-              <small>relationships · dimensions · search-ready fields</small>
+              <small>joined views · dimensions · search-ready fields</small>
               <span class="model-join"><i></i><i></i><i></i><b>joined</b></span>
             </button>
 

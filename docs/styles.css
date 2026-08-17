@@ -40,18 +40,22 @@ h4 { font-size: 1.4rem; }
 .flow-copy .eyebrow { margin: 0 0 5px; }
 .flow-copy h2 { font-size: 1.55rem; }
 .flow-copy > p { margin: 0 0 4px; color: var(--muted); font-size: .86rem; }
-.flow-canvas { position: relative; display: grid; grid-template-columns: 1.06fr 1.16fr 1.13fr .92fr .86fr; grid-template-rows: 1fr; gap: 3.1%; min-height: 334px; margin-top: 23px; overflow: hidden; border: 1px solid #dfe6e8; border-radius: 14px; background: linear-gradient(120deg, #fbfefd, #f5faf9); }
+.flow-canvas { position: relative; display: grid; grid-template-columns: .94fr 1.18fr 1.08fr .82fr .76fr; grid-template-rows: 1fr; gap: 5%; min-height: 360px; margin-top: 23px; overflow: hidden; border: 1px solid #dfe6e8; border-radius: 14px; background: linear-gradient(120deg, #fbfefd, #f5faf9); }
 .flow-canvas::before { content: ""; position: absolute; inset: 0; opacity: .56; background-image: linear-gradient(rgba(13,27,42,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(13,27,42,.045) 1px, transparent 1px); background-size: 30px 30px; pointer-events: none; }
 .flow-paths { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; overflow: visible; }
 .flow-path { fill: none; stroke-width: 3.5; stroke-linecap: round; stroke-dasharray: 3 15; animation: flow-forward 1.05s linear infinite; }
 .teal-path { stroke: #00a757; }
 .orange-path { stroke: #eb6700; animation-duration: 1.35s; }
 .blue-path { stroke: var(--blue); animation-duration: 1.18s; }
+.stage-path { stroke-width: 4.25; stroke-dasharray: 4 12; }
+.join-hub { fill: #00a757; stroke: #fff; stroke-width: 3; filter: drop-shadow(0 2px 2px rgba(0,0,0,.15)); animation: join-pulse 1.5s ease-in-out infinite; }
 @keyframes flow-forward { to { stroke-dashoffset: -18; } }
+@keyframes join-pulse { 50% { r: 9; opacity: .72; } }
 .flow-card { position: relative; z-index: 2; align-self: center; display: flex; flex-direction: column; gap: 5px; min-width: 0; padding: 18px; border: 1px solid #dce3e5; border-radius: 10px; color: var(--ink); background: rgba(255,255,255,.96); box-shadow: 0 10px 26px -24px rgba(13,27,42,.8); font: inherit; text-align: left; cursor: pointer; transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
 .flow-card:hover, .flow-card:focus-visible, .flow-card.is-selected { border-color: var(--blue); box-shadow: 0 12px 28px -20px rgba(10,93,126,.5); transform: translateY(-3px); outline: none; }
 .flow-card:focus-visible { outline: 3px solid rgba(10,93,126,.25); outline-offset: 3px; }
-.tables-card { grid-column: 1; margin-left: 18px; }
+.tables-card { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-column: 1; gap: 6px; margin-left: 18px; padding: 13px; }
+.tables-card > .flow-step, .tables-card > strong, .tables-card > small { grid-column: 1 / -1; }
 .sql-card { grid-column: 2; }
 .thoughtspot-model-card { grid-column: 3; }
 .metrics-card { grid-column: 4; }
@@ -62,8 +66,15 @@ h4 { font-size: 1.4rem; }
 .model-join { display: flex; align-items: center; gap: 4px; margin-top: 8px; }
 .model-join i { width: 17px; height: 10px; border: 1px solid var(--blue); border-radius: 2px; background: #e9f5f7; }
 .model-join b { margin-left: 4px; color: var(--blue); font-size: .66rem; letter-spacing: .06em; text-transform: uppercase; }
-.table-stack { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 8px; }
-.table-stack i { padding: 2px 5px; border: 1px solid #c9dfe3; border-radius: 4px; color: #24516b; background: #edf7f8; font-size: .6rem; font-style: normal; font-weight: 750; }
+.source-tables { display: contents; }
+.table-cell { display: flex; flex-direction: column; gap: 2px; min-width: 0; padding: 6px; border: 1px solid #c9dfe3; border-radius: 5px; background: #edf7f8; }
+.table-cell b { overflow: hidden; color: #24516b; font-size: .58rem; line-height: 1.15; text-overflow: ellipsis; white-space: nowrap; }
+.table-cell i { overflow: hidden; color: #5d7180; font-size: .54rem; font-style: normal; line-height: 1.15; text-overflow: ellipsis; white-space: nowrap; }
+.join-rules { display: grid; gap: 5px; margin-top: 2px; }
+.join-rules i { display: flex; justify-content: space-between; gap: 5px; padding-bottom: 4px; border-bottom: 1px dashed #cad8dc; color: #38576c; font-size: .61rem; font-style: normal; line-height: 1.15; }
+.join-rules i:last-child { padding-bottom: 0; border-bottom: 0; }
+.join-rules b { font-weight: 760; }
+.join-rules em { color: var(--blue); font-size: .58rem; font-style: normal; white-space: nowrap; }
 .metric-pills { display: flex; gap: 5px; margin-top: 8px; }
 .metric-pills i { padding: 2px 5px; border-radius: 4px; color: #0b6f48; background: #dff6e7; font-size: .62rem; font-style: normal; font-weight: 800; }
 .liveboard-bars { display: flex; align-items: end; gap: 3px; height: 20px; margin-top: 7px; }
@@ -83,6 +94,7 @@ footer { padding: 22px 0 38px; border-top: 1px solid var(--line); color: var(--m
   .flow-canvas { grid-template-columns: 1fr; grid-template-rows: repeat(5, auto); gap: 22px; min-height: 0; padding: 22px; }
   .flow-paths { display: none; }
   .flow-card, .tables-card, .sql-card, .thoughtspot-model-card, .metrics-card, .liveboards-card { grid-column: 1; margin: 0; }
+  .tables-card { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
-@media (prefers-reduced-motion: reduce) { .flow-path { animation: none; } .flow-card { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .flow-path, .join-hub { animation: none; } .flow-card { transition: none; } }
